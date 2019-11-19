@@ -43,17 +43,13 @@ var reward = {};
         }
     };
     body.prepend(
-        $('<div/>').attr('style',"position:fixed;top:45px;left:0;z-index:999;width:350px;background-color:black;color: white; text-align: left;")
+        $('<div/>').attr('style',"position:fixed;top:45px;left:0;z-index:999;width:369px;background-color:black;color: white; text-align: left;")
             .append(
                 $('<div/>').attr('id','autofaucet')
-                    .append($('<p/>').attr('style','text-decoration:underline;').text("Freebitco.in auto roll"))
-                    .append($('<p/>').text("donation to:"))
-                    .append($('<p/>').text("1FMRbMZQ6cdQjyZoNtvE2fB8BRRzDT2mJq"))
-                    .append($('<p/>').text("(Click to copy)"))
                     .append($('<p/>')
                     )
             ).click(function(){
-            var $temp = $('<input>').val("1FMRbMZQ6cdQjyZoNtvE2fB8BRRzDT2mJq");
+            var $temp = $('<input>').val("15D9w4ZngxQ8i5W3cFhsU1dXemzyss8DD3");
             body.append($temp);
             $temp.select();
             document.execCommand("copy");
@@ -66,6 +62,10 @@ var reward = {};
     setInterval(reward.select,60000);
 $(document).ready(function(){
     console.log("Status: Page loaded.");
+    setTimeout(function(){
+        $('#play_without_captchas_button').click();
+        console.log("Status: Play Without Captcha button clicked.");
+    }, random(1000,2000));
     setTimeout(function(){
         $('#free_play_form_button').click();
         console.log("Status: Button ROLL clicked.");
